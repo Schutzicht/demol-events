@@ -3,7 +3,7 @@ import '../styles/global.css';
 import '@fontsource/inter';
 import '@fontsource/outfit';
 import SmoothScroll from '../components/ui/SmoothScroll';
-import Cursor from '../components/ui/Cursor';
+import SmoothScroll from '../components/ui/SmoothScroll';
 
 interface Props {
 	title: string;
@@ -23,9 +23,8 @@ const { title, description = "De Mol Events - Jouw event in no-time geregeld!" }
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="bg-dme-black text-white cursor-none">
+	<body class="bg-dme-black text-white">
 		<SmoothScroll client:only="react" />
-		<Cursor client:only="react" />
 		<slot />
 	</body>
 </html>
