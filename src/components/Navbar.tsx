@@ -87,13 +87,15 @@ export default function Navbar() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-[60] bg-black/95 backdrop-blur-2xl flex flex-col items-center justify-center p-6"
+                        transition={{ duration: 0.2 }}
+                        className="fixed inset-0 z-[60] bg-white/90 backdrop-blur-xl flex flex-col items-center justify-center p-6 text-gray-900"
                     >
                         <button
-                            className="absolute top-8 right-8 text-white/50 hover:text-white transition-colors"
+                            className="absolute top-6 right-6 p-2 bg-gray-100 rounded-full text-gray-900 hover:bg-gray-200 transition-colors shadow-sm"
                             onClick={() => setIsOpen(false)}
+                            aria-label="Sluit menu"
                         >
-                            <X size={48} strokeWidth={1} />
+                            <X size={32} strokeWidth={2} />
                         </button>
 
                         <motion.div
@@ -101,22 +103,21 @@ export default function Navbar() {
                             animate="visible"
                             exit="hidden"
                             variants={{
-                                visible: { transition: { staggerChildren: 0.1 } },
+                                visible: { transition: { staggerChildren: 0.05, delayChildren: 0.1 } },
                                 hidden: {}
                             }}
-                            className="flex flex-col items-center gap-6"
+                            className="flex flex-col items-center gap-8"
                         >
                             {navItems.map((item) => (
                                 <motion.a
                                     key={item.name}
                                     href={item.href}
                                     onClick={() => setIsOpen(false)}
-                                    className="text-5xl md:text-7xl font-heading font-bold text-transparent text-outline hover:text-white hover:text-fill transition-all duration-500"
+                                    className="text-5xl font-heading font-black text-gray-900 hover:text-dme-teal transition-colors tracking-tight"
                                     variants={{
-                                        visible: { opacity: 1, y: 0 },
-                                        hidden: { opacity: 0, y: 50 }
+                                        visible: { opacity: 1, y: 0, transition: { duration: 0.3, ease: "backOut" } },
+                                        hidden: { opacity: 0, y: 20 }
                                     }}
-                                    style={{ WebkitTextStroke: "1px rgba(255,255,255,0.5)" }}
                                 >
                                     {item.name}
                                 </motion.a>
@@ -126,12 +127,12 @@ export default function Navbar() {
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.5 }}
+                            transition={{ delay: 0.3, duration: 0.3 }}
                             className="absolute bottom-12 left-0 right-0 flex justify-center"
                         >
-                            <a href="tel:0612408678" className="flex flex-col items-center gap-2 text-gray-400 hover:text-dme-teal transition-colors">
+                            <a href="tel:0612408678" className="flex flex-col items-center gap-2 text-gray-500 hover:text-dme-teal transition-colors">
                                 <Phone size={24} />
-                                <span className="font-mono text-sm">06 124 086 78</span>
+                                <span className="font-mono text-sm font-bold">06 124 086 78</span>
                             </a>
                         </motion.div>
                     </motion.div>
