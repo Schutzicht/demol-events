@@ -28,7 +28,7 @@ export default function Navbar() {
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                     className={`pointer-events-auto transition-all duration-500 ease-out ${scrolled
-                        ? 'bg-white/90 backdrop-blur-2xl border border-white/20 rounded-full py-3 px-8 shadow-[0_8px_32px_rgba(0,0,0,0.1)] w-auto min-w-[300px]'
+                        ? 'bg-white/60 backdrop-blur-3xl border border-white/20 rounded-full py-3 px-8 shadow-[0_8px_32px_rgba(0,0,0,0.1)] w-auto min-w-[300px]'
                         : 'bg-white/30 backdrop-blur-md py-4 px-6 w-[90%] max-w-5xl rounded-full border border-white/20'
                         }`}
                 >
