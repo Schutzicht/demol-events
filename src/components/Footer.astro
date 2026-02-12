@@ -3,8 +3,13 @@ const currentYear = new Date().getFullYear();
 ---
 
 <footer class="bg-dme-dark text-white pt-20 pb-10">
-  <div class="container mx-auto px-4">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+  <div class="container mx-auto px-4 relative overflow-hidden">
+    {/* Watermark */}
+    <div class="absolute -top-20 -right-20 opacity-[0.03] pointer-events-none select-none z-0">
+        <svg width="600" height="600" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 relative z-10">
       
       {/* Brand */}
       <div>
