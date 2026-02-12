@@ -59,8 +59,8 @@ export default function Navbar() {
                             <a
                                 href="#contact"
                                 className={`group px-5 py-2 rounded-full font-bold text-sm transition-all duration-300 flex items-center gap-2 ${scrolled
-                                    ? 'bg-dme-teal text-white hover:bg-dme-teal-dark hover:scale-105'
-                                    : 'bg-dme-teal text-white hover:bg-dme-teal-dark shadow-lg shadow-dme-teal/20'
+                                    ? 'bg-dme-accent text-white hover:bg-dme-accent-dark hover:scale-105 shadow-lg shadow-dme-accent/20'
+                                    : 'bg-dme-accent text-white hover:bg-dme-accent-dark shadow-lg shadow-dme-accent/20'
                                     }`}
                             >
                                 <span>Kennismaken</span>

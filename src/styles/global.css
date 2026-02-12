@@ -3,6 +3,9 @@
 @theme {
     --color-dme-teal: #00BFB3;
     --color-dme-teal-dark: #008f86;
+    --color-dme-accent: #FF6B6B;
+    /* Vibrant Coral */
+    --color-dme-accent-dark: #e05e5e;
     --color-dme-black: #ffffff;
     --color-dme-dark: #121212;
     --color-dme-gray: #f4f4f4;
