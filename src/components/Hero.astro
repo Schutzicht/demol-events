@@ -3,13 +3,16 @@ import { Image } from 'astro:assets';
 
 const content = {
   label: "Event Productie",
-  headline: "DEMOL EVENTS",
-  subtext: "We creëren, produceren en realiseren.",
+  heading: {
+    line1: "DEMOL",
+    highlight: "EVENTS."
+  },
+  description: "We creëren, produceren en realiseren evenementen die bijblijven. Van concept tot uitvoering, wij regelen het.",
   bgImage: "https://lirp.cdn-website.com/3a60022f/dms3rep/multi/opt/Schermafbeelding+2018-08-05+om+14.11.25-2880w.jpg"
 };
 ---
 
-<section class="relative min-h-[100dvh] w-full bg-dme-black overflow-hidden flex flex-col justify-center items-center perspective-1000">
+<section class="relative min-h-[100dvh] w-full overflow-hidden flex flex-col justify-center items-center perspective-1000">
   
   {/* Cinematic Background with Parallax */}
   <div class="absolute inset-0 z-0 select-none pointer-events-none">
@@ -45,25 +48,30 @@ const content = {
       </div>
 
       {/* Headline - Big & Bold */}
-      <h1 class="text-7xl md:text-9xl lg:text-[11rem] leading-[0.85] font-heading font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-white/50 animate-slide-up opacity-0 fill-mode-forwards drop-shadow-2xl" style="animation-delay: 0.4s;">
-        {content.headline}
-      </h1>
+        <h1 class="text-5xl md:text-7xl lg:text-8xl font-heading font-black tracking-tight mb-8 leading-[1.1]">
+          <span class="block text-gray-900" style="animation-delay: 0.3s;">
+            {content.heading.line1}
+          </span>
+          <span class="block text-transparent bg-clip-text bg-gradient-to-r from-dme-teal to-dme-teal-dark pb-4" style="animation-delay: 0.4s;">
+            {content.heading.highlight}
+          </span>
+        </h1>
 
-      {/* Subtext */}
-      <p class="text-xl md:text-2xl text-gray-300 font-light max-w-2xl mx-auto leading-relaxed animate-slide-up opacity-0 fill-mode-forwards" style="animation-delay: 0.6s;">
-        {content.subtext}
-      </p>
+        <div class="text-sm text-gray-500">
+          <span class="text-gray-900 font-bold block">Vertrouwd door</span>
+          vele tevreden klanten.
+        </div>
 
       {/* Actions */}
-      <div class="pt-8 flex flex-col sm:flex-row gap-6 justify-center items-center animate-slide-up opacity-0 fill-mode-forwards" style="animation-delay: 0.8s;">
-         <a href="#contact" class="group relative px-8 py-4 bg-white text-black font-bold text-lg rounded-full overflow-hidden transition-all hover:scale-105 active:scale-95">
-           <span class="relative z-10 group-hover:text-white transition-colors duration-300">Start jouw project</span>
-           <div class="absolute inset-0 bg-dme-teal transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-         </a>
-         
-         <a href="#portfolio" class="group flex items-center gap-3 text-white/80 hover:text-white transition-colors">
-           <span class="text-lg font-medium">Bekijk portfolio</span>
-           <div class="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center group-hover:border-white transition-colors">
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-6" style="animation-delay: 0.6s;">
+          <a href="#contact" class="group relative px-8 py-4 bg-dme-teal text-white font-bold text-lg rounded-full overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-lg shadow-dme-teal/30">
+            <span class="relative z-10">Start jouw project</span>
+            <div class="absolute inset-0 bg-dme-teal-dark transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+          </a>
+          
+          <a href="#portfolio" class="group flex items-center gap-3 px-6 py-4 rounded-full hover:bg-gray-100 transition-all text-gray-600 hover:text-dme-teal font-medium">
+            <span>of bekijk ons werk</span>
+            <div class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center group-hover:bg-dme-teal group-hover:text-white transition-all">
              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transform group-hover:translate-x-0.5 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
            </div>
          </a>

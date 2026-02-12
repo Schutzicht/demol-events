@@ -36,33 +36,40 @@ const services = [
 ];
 ---
 
-<section id="diensten" class="py-24 md:py-32 bg-dme-dark relative overflow-hidden">
-  
-  <div class="container mx-auto px-6 relative z-10">
-    <div class="text-center max-w-3xl mx-auto mb-20">
-       <FadeIn client:visible direction="up">
-        <h2 class="text-4xl md:text-6xl font-heading font-bold text-white mb-6">
-            Onze <span class="text-dme-teal">Expertise</span>.
+<section id="diensten" class="py-20 md:py-32 bg-gray-50">
+  <div class="container mx-auto px-6">
+    <div class="md:flex md:justify-between md:items-end mb-16">
+       <FadeIn client:visible direction="right">
+        <h2 class="text-4xl md:text-6xl font-heading font-bold text-gray-900 mb-6">
+          Onze <span class="text-dme-teal">Expertise</span>.
         </h2>
-        <p class="text-xl text-gray-400 font-light">
-          Of het nu gaat om een zakelijk seminar of een spetterend feest, De Mol Events regelt het tot in de perfectie.
-        </p>
-      </FadeIn>
+       </FadeIn>
+       <FadeIn client:visible direction="left" delay={0.2} className="hidden md:block">
+          <p class="text-gray-600 max-w-sm text-right">
+            Van concept tot realisatie. Wij regelen alles tot in de puntjes, zodat jij tijd hebt voor je gasten.
+          </p>
+       </FadeIn>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       {services.map((service, index) => (
-        <FadeIn client:visible delay={index * 0.1} className="h-full">
-          <div class="group h-full p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-dme-teal/50 hover:bg-white/10 transition-all duration-300">
-            <div class="w-14 h-14 bg-dme-teal/20 rounded-2xl flex items-center justify-center text-dme-teal mb-6 group-hover:scale-110 group-hover:bg-dme-teal group-hover:text-white transition-all duration-300">
-              <service.icon size={28} />
+        <FadeIn client:visible delay={index * 0.1}>
+          <div class="group bg-white p-8 rounded-3xl border border-gray-100 shadow-xl shadow-gray-200/50 hover:shadow-2xl hover:shadow-dme-teal/10 hover:-translate-y-2 transition-all duration-300 h-full flex flex-col">
+            <div class="w-14 h-14 bg-gray-50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-dme-teal group-hover:text-white transition-colors duration-300 text-dme-teal">
+              <service.icon size={28} strokeWidth={1.5} />
             </div>
-            <h3 class="text-2xl font-heading font-bold text-white mb-4 group-hover:text-dme-teal transition-colors">
-              {service.title}
-            </h3>
-            <p class="text-gray-400 group-hover:text-gray-300 transition-colors leading-relaxed">
+            
+            <h3 class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-dme-teal transition-colors">{service.title}</h3>
+            <p class="text-gray-600 leading-relaxed mb-8 flex-grow">
               {service.description}
             </p>
+            
+            <div class="mt-auto pt-6 border-t border-gray-100 flex items-center justify-between">
+              <span class="text-sm font-bold text-gray-400 group-hover:text-dme-teal transition-colors">Meer info</span>
+              <div class="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center group-hover:bg-dme-teal group-hover:text-white transition-all">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="-rotate-45 group-hover:rotate-0 transition-transform"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </div>
+            </div>
           </div>
         </FadeIn>
       ))}
