@@ -28,16 +28,16 @@ export default function Navbar() {
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                     className={`pointer-events-auto transition-all duration-500 ease-out ${scrolled
-                        ? 'bg-white/80 backdrop-blur-2xl border border-white/20 rounded-full py-3 px-8 shadow-[0_8px_32px_rgba(0,0,0,0.1)] w-auto min-w-[300px]'
-                        : 'bg-white/10 backdrop-blur-md py-4 px-6 w-[90%] max-w-5xl rounded-full border-transparent'
+                        ? 'bg-white/90 backdrop-blur-2xl border border-white/20 rounded-full py-3 px-8 shadow-[0_8px_32px_rgba(0,0,0,0.1)] w-auto min-w-[300px]'
+                        : 'bg-white/30 backdrop-blur-md py-4 px-6 w-[90%] max-w-5xl rounded-full border border-white/20'
                         }`}
                 >
                     <div className="flex items-center justify-between gap-8">
 
                         {/* Logo */}
                         <a href="#" className="relative group">
-                            <span className="font-heading font-black text-2xl tracking-tighter text-gray-900 transition-colors duration-300 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-dme-teal group-hover:to-dme-teal-dark">
-                                DeMol<span className="text-dme-teal group-hover:text-dme-teal-dark transition-colors">.</span>
+                            <span className="font-heading font-black text-2xl tracking-tighter text-gray-900 transition-colors duration-300">
+                                DeMol<span className="text-dme-teal transition-colors">.</span>
                             </span>
                         </a>
 
@@ -47,10 +47,10 @@ export default function Navbar() {
                                 <a
                                     key={item.name}
                                     href={item.href}
-                                    className="relative px-4 py-2 text-sm font-medium text-gray-600 hover:text-dme-teal transition-colors group overflow-hidden"
+                                    className="relative px-4 py-2 text-sm font-bold text-gray-800 hover:text-dme-teal transition-colors group overflow-hidden"
                                 >
                                     <span className="relative z-10">{item.name}</span>
-                                    <span className="absolute inset-0 bg-white/5 rounded-full transform scale-0 group-hover:scale-100 transition-transform duration-300 origin-center"></span>
+                                    <span className="absolute inset-0 bg-white/40 rounded-full transform scale-0 group-hover:scale-100 transition-transform duration-300 origin-center"></span>
                                 </a>
                             ))}
                         </div>
@@ -60,7 +60,7 @@ export default function Navbar() {
                                 href="#contact"
                                 className={`group px-5 py-2 rounded-full font-bold text-sm transition-all duration-300 flex items-center gap-2 ${scrolled
                                     ? 'bg-dme-teal text-white hover:bg-dme-teal-dark hover:scale-105'
-                                    : 'bg-white/90 backdrop-blur-sm border border-white/50 text-dme-teal hover:bg-white hover:text-dme-teal-dark'
+                                    : 'bg-dme-teal text-white hover:bg-dme-teal-dark shadow-lg shadow-dme-teal/20'
                                     }`}
                             >
                                 <span>Kennismaken</span>
@@ -70,7 +70,7 @@ export default function Navbar() {
 
                         {/* Mobile Toggle */}
                         <button
-                            className="md:hidden text-white p-2 hover:bg-white/10 rounded-full transition-colors"
+                            className="md:hidden text-gray-900 p-2 hover:bg-dme-teal/10 rounded-full transition-colors"
                             onClick={() => setIsOpen(true)}
                             aria-label="Open Menu"
                         >
