@@ -41,7 +41,7 @@ export default function Clients() {
                 <p className="text-gray-400 font-medium uppercase tracking-widest text-sm">Zij gingen je voor</p>
             </div>
 
-            <div className="relative w-full overflow-hidden">
+            <div className="relative w-full overflow-hidden h-24 flex items-center">
                 <div className="flex animate-marquee whitespace-nowrap items-center">
                     {allClients.map((client, index) => (
                         <div key={index} className="mx-8 md:mx-12 shrink-0 transition-all duration-500 hover:scale-105">
