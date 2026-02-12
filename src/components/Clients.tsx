@@ -44,7 +44,7 @@ export default function Clients() {
             <div className="relative w-full overflow-hidden">
                 <div className="flex animate-marquee whitespace-nowrap items-center">
                     {allClients.map((client, index) => (
-                        <div key={index} className="mx-8 md:mx-12 shrink-0 grayscale hover:grayscale-0 transition-all duration-500 opacity-60 hover:opacity-100">
+                        <div key={index} className="mx-8 md:mx-12 shrink-0 transition-all duration-500 hover:scale-105">
                             <img
                                 src={client.logo}
                                 alt={client.name}
