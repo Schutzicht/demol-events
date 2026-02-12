@@ -1,0 +1,55 @@
+---
+import FadeIn from './ui/FadeIn';
+
+const reviews = [
+  {
+    name: "Janine van der Horst",
+    role: "PZEM",
+    quote: "Ilse regelt het gewoon. Punt. Geen stress, volledige ontzorging en een fantastisch resultaat."
+  },
+  {
+    name: "Mark van den Berg",
+    role: "Directeur",
+    quote: "De Mol Events snapt precies wat wij nodig hebben. Professioneel, creatief en altijd vrolijk."
+  },
+   {
+    name: "Sophie de Vries",
+    role: "Marketing Manager",
+    quote: "Onze open dag was een enorm succes dankzij de strakke organisatie van Ilse. Aanrader!"
+  }
+];
+---
+
+<section class="py-20 bg-dme-black">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <FadeIn client:visible direction="down">
+        <h2 class="text-4xl font-heading font-bold text-white mb-4">
+          Wat anderen <span class="text-dme-teal">zeggen</span>.
+        </h2>
+      </FadeIn>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {reviews.map((review, index) => (
+        <FadeIn client:visible delay={index * 0.1}>
+          <div class="bg-white/5 p-8 rounded-2xl shadow-sm border border-white/10 relative">
+            <div class="absolute -top-4 left-8 text-6xl text-dme-teal/20 font-serif leading-none">"</div>
+            <p class="text-gray-300 mb-6 relative z-10 italic">
+              {review.quote}
+            </p>
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 bg-dme-teal text-white rounded-full flex items-center justify-center font-bold">
+                {review.name.charAt(0)}
+              </div>
+              <div>
+                <h4 class="font-bold text-white">{review.name}</h4>
+                <p class="text-sm text-gray-400">{review.role}</p>
+              </div>
+            </div>
+          </div>
+        </FadeIn>
+      ))}
+    </div>
+  </div>
+</section>

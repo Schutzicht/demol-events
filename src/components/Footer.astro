@@ -1,0 +1,79 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-dme-dark text-white pt-20 pb-10">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+      
+      {/* Brand */}
+      <div>
+        <a href="#" class="font-heading font-bold text-3xl tracking-tight text-white mb-6 block">
+            De Mol <span class="text-dme-teal">Events</span>
+        </a>
+        <p class="text-gray-400 leading-relaxed mb-6">
+          Jouw event in no-time geregeld. De partner voor creatieve en professionele evenementen in Zeeland.
+        </p>
+        <div class="flex gap-4">
+           {/* Socials - placeholders */}
+           <a href="http://instagram.com/demolevents" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-dme-teal transition-colors">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+           </a>
+           <a href="https://www.linkedin.com/in/ilsedemol/" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-dme-teal transition-colors">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+           </a>
+        </div>
+      </div>
+
+      {/* Quick Links */}
+      <div>
+        <h4 class="font-bold text-lg mb-6">Navigatie</h4>
+        <ul class="space-y-3 text-gray-400">
+          <li><a href="#over" class="hover:text-dme-teal transition-colors">Over DME</a></li>
+          <li><a href="#diensten" class="hover:text-dme-teal transition-colors">Diensten</a></li>
+          <li><a href="#portfolio" class="hover:text-dme-teal transition-colors">Portfolio</a></li>
+          <li><a href="#contact" class="hover:text-dme-teal transition-colors">Contact</a></li>
+        </ul>
+      </div>
+
+      {/* Services */}
+      <div>
+        <h4 class="font-bold text-lg mb-6">Diensten</h4>
+        <ul class="space-y-3 text-gray-400">
+          <li>Bedrijfsfeesten</li>
+          <li>Seminars</li>
+          <li>Open Dagen</li>
+          <li>Jubilea</li>
+          <li>Event op maat</li>
+        </ul>
+      </div>
+
+      {/* Contact */}
+      <div>
+        <h4 class="font-bold text-lg mb-6">Contact</h4>
+        <ul class="space-y-3 text-gray-400">
+          <li class="flex items-start gap-3">
+             <svg class="shrink-0 mt-1" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+             <a href="tel:0612408678" class="hover:text-white transition-colors">06 124 086 78</a>
+          </li>
+          <li class="flex items-start gap-3">
+             <svg class="shrink-0 mt-1" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+             <a href="mailto:info@demolevents.nl" class="hover:text-white transition-colors">info@demolevents.nl</a>
+          </li>
+          <li class="flex items-start gap-3">
+             <svg class="shrink-0 mt-1" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+             <span>Zeeland, Nederland</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+      <p>&copy; {currentYear} De Mol Events. Alle rechten voorbehouden.</p>
+      <div class="flex gap-6 mt-4 md:mt-0">
+        <a href="#" class="hover:text-white transition-colors">Privacyverklaring</a>
+        <a href="#" class="hover:text-white transition-colors">Algemene Voorwaarden</a>
+      </div>
+    </div>
+  </div>
+</footer>

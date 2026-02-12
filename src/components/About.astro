@@ -1,0 +1,70 @@
+---
+import FadeIn from './ui/FadeIn';
+---
+
+<section id="over" class="py-20 md:py-32 bg-white overflow-hidden">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col md:flex-row items-center gap-12 lg:gap-20">
+      
+      {/* Text Content */}
+      <div class="w-full md:w-1/2 order-2 md:order-1">
+        <FadeIn client:visible direction="right">
+          <span class="text-dme-teal font-bold tracking-wider uppercase mb-2 block">Over Ilse de Mol</span>
+          <h2 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-dme-dark mb-6 leading-tight">
+            Gepokt en gemazeld in de <span class="text-dme-teal">eventbranche</span>.
+          </h2>
+          <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+            Met ruim 20 jaar ervaring is Ilse de Mol een bekend gezicht in de evenementenwereld. 
+            Van intieme diners tot grootschalige festivals: Ilse draait haar hand er niet voor om.
+          </p>
+          <div class="space-y-4 mb-8">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-full bg-dme-teal/10 flex items-center justify-center shrink-0">
+                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-dme-teal"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div>
+                <h4 class="font-bold text-lg">Snel & Efficiënt</h4>
+                <p class="text-gray-500">"Jouw event in no-time geregeld" is geen loze kreet. Actiegericht en hands-on.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-full bg-dme-teal/10 flex items-center justify-center shrink-0">
+                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-dme-teal"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div>
+                 <h4 class="font-bold text-lg">Kwaliteit & Vertrouwen</h4>
+                <p class="text-gray-500">Altijd kwalitatief dik in orde. Een partner waar je op kunt bouwen.</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="#contact" class="inline-flex items-center gap-2 text-dme-teal font-bold hover:gap-4 transition-all">
+            Kennismaken? 
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </FadeIn>
+      </div>
+
+      {/* Image/Visual */}
+      <div class="w-full md:w-1/2 order-1 md:order-2">
+         <FadeIn client:visible direction="left" delay={0.2}>
+          <div class="relative">
+            <div class="absolute -inset-4 bg-dme-teal/20 rounded-2xl transform rotate-3 -z-10"></div>
+            <img 
+              src="https://lirp.cdn-website.com/3a60022f/dms3rep/multi/opt/EVM-20180821-0006-L1120860-2-1920w.jpg" 
+              alt="Ilse de Mol - Eigenaar De Mol Events" 
+              class="rounded-2xl shadow-2xl w-full object-cover aspect-[4/5] grayscale hover:grayscale-0 transition-all duration-700"
+            />
+             {/* Quote Card */}
+            <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl max-w-xs hidden lg:block">
+              <p class="text-dme-dark italic font-medium">"Mijn doel is om jou volledig te ontzorgen, zodat jij ook kunt genieten."</p>
+              <p class="text-dme-teal text-sm font-bold mt-2">- Ilse de Mol</p>
+            </div>
+          </div>
+        </FadeIn>
+      </div>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,133 @@
+---
+import { Image } from 'astro:assets';
+
+const content = {
+  label: "Event Productie",
+  headline: "DEMOL EVENTS",
+  subtext: "We creëren, produceren en realiseren.",
+  bgImage: "https://lirp.cdn-website.com/3a60022f/dms3rep/multi/opt/Schermafbeelding+2018-08-05+om+14.11.25-2880w.jpg"
+};
+---
+
+<section class="relative min-h-[100dvh] w-full bg-dme-black overflow-hidden flex flex-col justify-center items-center perspective-1000">
+  
+  {/* Cinematic Background with Parallax */}
+  <div class="absolute inset-0 z-0 select-none pointer-events-none">
+     <div class="absolute inset-0 bg-dme-black/30 z-10 mix-blend-multiply"></div>
+     <div class="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-dme-black via-dme-black/80 to-transparent z-20"></div>
+     
+     <img 
+      src={content.bgImage}
+      alt="DeMol Events Atmosphere" 
+      class="w-full h-full object-cover scale-110 animate-subtle-zoom will-change-transform"
+      style="transform-origin: center center;"
+    />
+  </div>
+
+  <div class="container relative z-30 px-6 mx-auto h-full flex flex-col justify-center items-center text-center">
+    
+    {/* Floating Elements */}
+    <div class="absolute top-1/4 left-10 hidden lg:block animate-float-slow opacity-60 mix-blend-overlay">
+        <div class="w-32 h-32 rounded-full border border-white/20 backdrop-blur-md"></div>
+    </div>
+    <div class="absolute bottom-1/4 right-10 hidden lg:block animate-float-medium opacity-60 mix-blend-overlay">
+        <div class="w-48 h-48 rounded-full border border-dme-teal/20 backdrop-blur-md bg-dme-teal/5"></div>
+    </div>
+
+    {/* Main Content */}
+    <div class="relative max-w-5xl mx-auto space-y-8">
+      
+      {/* Label */}
+      <div class="overflow-hidden mb-4">
+        <span class="inline-block bg-white/90 backdrop-blur-sm px-4 py-1 rounded-full text-dme-teal font-mono uppercase tracking-[0.2em] text-xs font-bold animate-slide-up opacity-0 fill-mode-forwards shadow-lg" style="animation-delay: 0.2s;">
+          {content.label}
+        </span>
+      </div>
+
+      {/* Headline - Big & Bold */}
+      <h1 class="text-7xl md:text-9xl lg:text-[11rem] leading-[0.85] font-heading font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-white/50 animate-slide-up opacity-0 fill-mode-forwards drop-shadow-2xl" style="animation-delay: 0.4s;">
+        {content.headline}
+      </h1>
+
+      {/* Subtext */}
+      <p class="text-xl md:text-2xl text-gray-300 font-light max-w-2xl mx-auto leading-relaxed animate-slide-up opacity-0 fill-mode-forwards" style="animation-delay: 0.6s;">
+        {content.subtext}
+      </p>
+
+      {/* Actions */}
+      <div class="pt-8 flex flex-col sm:flex-row gap-6 justify-center items-center animate-slide-up opacity-0 fill-mode-forwards" style="animation-delay: 0.8s;">
+         <a href="#contact" class="group relative px-8 py-4 bg-white text-black font-bold text-lg rounded-full overflow-hidden transition-all hover:scale-105 active:scale-95">
+           <span class="relative z-10 group-hover:text-white transition-colors duration-300">Start jouw project</span>
+           <div class="absolute inset-0 bg-dme-teal transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+         </a>
+         
+         <a href="#portfolio" class="group flex items-center gap-3 text-white/80 hover:text-white transition-colors">
+           <span class="text-lg font-medium">Bekijk portfolio</span>
+           <div class="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center group-hover:border-white transition-colors">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transform group-hover:translate-x-0.5 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+           </div>
+         </a>
+      </div>
+
+    </div>
+  </div>
+
+  {/* Scroll Indicator */}
+  <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce-slow opacity-50 mix-blend-screen">
+    <div class="w-[1px] h-16 bg-gradient-to-b from-transparent via-white to-transparent"></div>
+  </div>
+
+</section>
+
+<style>
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes subtle-zoom {
+    0% { transform: scale(1.1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1.1); }
+  }
+
+  @keyframes float-slow {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(2deg); }
+  }
+
+  @keyframes float-medium {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(-2deg); }
+  }
+
+  .animate-slide-up {
+    animation: slide-up 1s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .animate-subtle-zoom {
+    animation: subtle-zoom 20s ease-in-out infinite;
+  }
+
+  .animate-float-slow {
+    animation: float-slow 8s ease-in-out infinite;
+  }
+
+  .animate-float-medium {
+    animation: float-medium 6s ease-in-out infinite;
+  }
+  
+  .fill-mode-forwards {
+    animation-fill-mode: forwards;
+  }
+</style>

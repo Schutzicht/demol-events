@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@theme {
+    --color-dme-teal: #00BFB3;
+    --color-dme-teal-dark: #008f86;
+    --color-dme-black: #0a0a0a;
+    --color-dme-dark: #121212;
+    --color-dme-gray: #1a1a1a;
+    --color-dme-light: #f4f4f4;
+
+    --font-sans: 'Inter', sans-serif;
+    --font-heading: 'Outfit', sans-serif;
+
+    --animate-fade-in: fade-in 1s cubic-bezier(0.16, 1, 0.3, 1);
+    --animate-slide-up: slide-up 1s cubic-bezier(0.16, 1, 0.3, 1);
+    --animate-scale-in: scale-in 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+    body {
+        @apply font-sans text-white bg-dme-black antialiased selection:bg-dme-teal selection:text-white;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-heading font-bold tracking-tight;
+    }
+
+    .container {
+        @apply max-w-7xl mx-auto px-6 sm:px-8 lg:px-12;
+    }
+}
+
+/* Utilities */
+@utility glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+}
+
+@utility glass-hover {
+    @apply hover:bg-white/10 hover:border-white/20 transition-all duration-300;
+}
+
+@utility text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-white/50;
+}
+
+@utility text-gradient-teal {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-dme-teal to-dme-teal/70;
+}
+
+
+/* Animations */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slide-up {
+    from {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes scale-in {
+    from {
+        transform: scale(1.1);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-enter {
+    opacity: 0;
+    animation: slide-up 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-marquee {
+    animation: marquee 40s linear infinite;
+}
