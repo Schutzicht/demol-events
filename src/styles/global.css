@@ -109,3 +109,36 @@
 .animate-marquee {
     animation: marquee 40s linear infinite;
 }
+
+@layer utilities {
+    .cursor-none {
+        cursor: none !important;
+    }
+}
+
+/* Reveal Animations */
+.reveal-text {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.reveal-line {
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1), opacity 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.is-in-view .reveal-line {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.reveal-scale {
+    transform: scale(1.1);
+    opacity: 0;
+    transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1), opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.is-in-view.reveal-scale {
+    transform: scale(1);
+    opacity: 1;
+}
