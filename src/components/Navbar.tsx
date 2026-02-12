@@ -70,11 +70,24 @@ export default function Navbar() {
 
                         {/* Mobile Toggle */}
                         <button
-                            className="md:hidden text-gray-900 p-2 hover:bg-dme-teal/10 rounded-full transition-colors"
+                            className={`md:hidden p-2 rounded-full transition-all duration-300 flex items-center gap-2 ${scrolled ? 'bg-dme-accent text-white pr-4 pl-2' : 'text-gray-900 hover:bg-dme-teal/10'}`}
                             onClick={() => setIsOpen(true)}
                             aria-label="Open Menu"
                         >
-                            <Menu size={24} />
+                            {scrolled ? (
+                                <>
+                                    <div className="w-8 h-8 rounded-full overflow-hidden border-2 border-white/20 shrink-0">
+                                        <img
+                                            src="/ilse-profile.jpg"
+                                            alt="Ilse"
+                                            className="w-full h-full object-cover object-[75%_20%]"
+                                        />
+                                    </div>
+                                    <span className="font-bold text-xs">Menu</span>
+                                </>
+                            ) : (
+                                <Menu size={24} />
+                            )}
                         </button>
                     </div>
                 </motion.nav>
